@@ -1,0 +1,26 @@
+{
+  "name": "@generatebanners/node-sdk",
+  "version": "0.0.1",
+  "description": "GenerateBanners SDK for JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GenerateBanners/node-sdk.git"
+  },
+  "keywords": [
+    "automate",
+    "image",
+    "render",
+    "generate",
+    "banners"
+  ],
+  "author": "Thibaut Patel (https://github.com/tpatel)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GenerateBanners/node-sdk/issues"
+  },
+  "homepage": "https://github.com/GenerateBanners/node-sdk#readme"
+}
