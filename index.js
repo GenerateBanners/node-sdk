@@ -14,6 +14,15 @@ function encodeVariables(variables = {}) {
   ).join`&`;
 }
 
+function checkStatus(res) {
+  if (res.ok) {
+    // res.status >= 200 && res.status < 300
+    return res;
+  } else {
+    throw new Error(res.statusText);
+  }
+}
+
 class Template {
   constructor({ apiKey, apiSecret, domain = defaultDomain }) {
     this.apiKey = apiKey;
@@ -32,7 +41,9 @@ class Template {
         },
         body: JSON.stringify(template),
       }
-    ).then((r) => r.json());
+    )
+      .then(checkStatus)
+      .then((r) => r.json());
   }
 
   async add({ template }) {
@@ -43,7 +54,9 @@ class Template {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(template),
-    }).then((r) => r.json());
+    })
+      .then(checkStatus)
+      .then((r) => r.json());
   }
 
   async delete({ templateId }) {
@@ -59,7 +72,7 @@ class Template {
           "Content-Type": "application/json",
         },
       }
-    );
+    ).then(checkStatus);
   }
 }
 
@@ -113,7 +126,9 @@ class Utils {
   async download(url) {
     return await fetch(url, {
       method: "GET",
-    }).then((r) => r.buffer());
+    })
+      .then(checkStatus)
+      .then((r) => r.buffer());
   }
 }
 
