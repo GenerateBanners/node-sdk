@@ -1,6 +1,6 @@
 {
   "name": "@generatebanners/node-sdk",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "GenerateBanners SDK for JavaScript.",
   "main": "index.js",
   "scripts": {
