@@ -21,6 +21,7 @@
 3. [Common usage](#common-usage)
     1. [Create an image url from a template](#create-an-image-url-from-a-template)
     2. [Generate an image and download it](#generate-an-image-and-download-it)
+4. [License](#license)
 
 ## Installation
 
@@ -106,3 +107,7 @@ async function main() {
 
 main();
 ```
+
+## License
+
+MIT
