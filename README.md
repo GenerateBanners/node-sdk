@@ -72,7 +72,7 @@ const client = new GenerateBanners({
 });
 
 // Find TEMPLATE_ID by going to https://www.generatebanners.com/app then clicking on your template
-const imageUrl = sdk.image.signedUrl({
+const imageUrl = client.image.signedUrl({
   templateId: "TEMPLATE_ID",
   variables: {
     title_text: "My title",
@@ -93,14 +93,14 @@ async function main() {
     });
 
     // Find TEMPLATE_ID by going to https://www.generatebanners.com/app then clicking on your template
-    const imageUrl = sdk.image.signedUrl({
+    const imageUrl = client.image.signedUrl({
       templateId: "TEMPLATE_ID",
       variables: {
         title_text: "My title",
       },
     });
     
-    const img = await sdk.utils.download(imageUrl);
+    const img = await client.utils.download(imageUrl);
     await fs.writeFile(`./generated-${Date.now()}.jpg`, img);
 }
 
